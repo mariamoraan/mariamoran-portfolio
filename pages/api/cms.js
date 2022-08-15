@@ -1,7 +1,7 @@
 import * as contentful from 'contentful';
 
-const space = process.env.NEXT_PUBLIC_CONTENTFUL_SPACE_ID
-const accessToken = process.env.NEXT_PUBLIC_CONTENTFUL_ACCESS_TOKEN
+const space = 'whvmxfqhgwx6'
+const accessToken = 'YLYc6mIP5gd1Mn83vOPkFP24x5CpD-_XBfkAJkoZPy0'
 
 const client = contentful.createClient({
     space: space,
