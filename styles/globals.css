@@ -1,9 +1,18 @@
+@import url('https://fonts.googleapis.com/css2?family=Jost:wght@400;500&display=swap');
+
+:root{
+  --primary-color: #1D1C1E;
+  --primary-color-100: #333136;
+  --background-color: #FFFFFF;
+  --background-color-100: #F1F3F5;
+  --accent-color: #E7816B;
+  --accent-color-100: #ffad9b;
+}
+
 html,
 body {
   padding: 0;
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
 }
 
 a {
@@ -13,14 +22,86 @@ a {
 
 * {
   box-sizing: border-box;
+  font-family: 'Jost', sans-serif;
+  font-size: 16px;
+  line-height: 26px;
+  font-weight: 400;
 }
 
-@media (prefers-color-scheme: dark) {
-  html {
-    color-scheme: dark;
+h1{
+  font-size: 48px;
+  line-height: 48px;
+  font-weight: 500;
+}
+
+h2{
+  font-size: 40px;
+  line-height: 48px;
+  font-weight: 500;
+  letter-spacing: 2px;
+}
+
+h3{
+  font-size: 20px;
+  line-height: 26px;
+  font-weight: 500;
+  letter-spacing: 5px;
+}
+
+.page{
+  position: relative;
+  top: 12vh;
+  padding: 0 10vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+
+@media (max-width: 1200px) {
+  .page{
+    padding: 0 2vw;
   }
-  body {
-    color: white;
-    background: black;
+}
+
+@media (max-width: 800px) {
+  * {
+    font-size: 15px;
+    line-height: 25px;
   }
+  h1{
+    font-size: 32px;
+    line-height: 36px;
+  }
+  
+  h2{
+    font-size: 28px;
+    line-height: 36px;
+  }
+  
+  h3{
+    font-size: 15px;
+    line-height: auto;
+  }
+}
+
+/* width */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #888;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
 }

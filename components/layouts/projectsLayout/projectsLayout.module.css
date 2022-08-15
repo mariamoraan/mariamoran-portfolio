@@ -1,0 +1,137 @@
+.page-title{
+    padding: 24px;
+    margin-bottom: 56px;
+    width: 100%;
+    text-align: center;
+    background: var(--accent-color);
+    color: var(--background-color);
+    border-radius: 15px;
+}
+
+.grid{
+    margin-bottom: 56px;
+    max-width: 1200px;
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 30px;
+    list-style: none;
+}
+
+.grid-item{
+    position: relative;
+    width: 30%;
+    border-radius: 15px;
+    overflow: hidden;
+}
+
+.image-wrapper{
+    aspect-ratio: 350/320;
+    width: 100%;
+    position: relative;
+}
+
+.content-wrapper{
+    padding: 24px;
+    text-align: center;
+    background: #FDF3F0;
+    transition: 500ms ease;
+}
+
+.content-wrapper h3{
+    color: var(--accent-color);
+    transition: 500ms ease;
+    text-transform: uppercase;
+}
+
+.grid-item:hover{
+    cursor: pointer;
+}
+
+.grid-item:hover .content-wrapper{
+    background: var(--accent-color);
+    color: var(--background-color);
+}
+
+.grid-item:hover h3{
+    color: var(--background-color);
+}
+
+@media (max-width: 1200px) and (min-width: 801px){
+    .grid{
+        padding: 0;
+        flex-direction: column;
+    }
+    .grid-item{
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    .content-wrapper{
+        height: 350px;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+}
+
+@media (max-width: 800px){
+    .grid{
+        padding: 0;
+        flex-direction: column;
+    }
+    .grid-item{
+        max-width: 400px;
+        width: 100%;
+    }
+}
+
+.grid-wrapper{
+    padding: 0;
+    margin: 0;
+    margin-bottom: 56px;
+    width: 100%;
+    max-width: 1200px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-column-gap: 16px;
+    grid-row-gap: 16px;
+    list-style: none;
+    color: var(--background-color);
+}
+
+.grid-wrapper .grid{
+    position: relative;
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    border-radius: 15px;
+    text-transform: uppercase;
+    transition: 500ms ease;
+    background: rgba(0,0,0,0.5);
+}
+
+.grid-wrapper .grid-image{
+    position: relative;
+    z-index: -1;
+    border-radius: 15px;
+}
+
+.grid-wrapper .grid:hover{
+    cursor: pointer;
+    background: rgb(255, 173, 155, 0.5);
+}
+
+@media (max-width: 1200px) {
+    .grid-wrapper{
+        grid-template-columns: repeat(1, 1fr);
+    }
+}
