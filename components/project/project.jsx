@@ -31,7 +31,7 @@ const Project = () => {
                     <ul className={styles['technologies']}>
                         {
                             JSON.parse(router.query.technologies).map((technologie) => (
-                                <li className={styles['technologie']}>{technologie}</li>
+                                <li className={styles['technologie']} key={technologie}>{technologie}</li>
                             ))
                         }
                     </ul>
