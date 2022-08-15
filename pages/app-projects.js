@@ -23,6 +23,9 @@ const AppProjects = () => {
             items {
               title
               date
+              link
+              technologies
+              linkgithub
               description{
                 json
               }

@@ -22,6 +22,9 @@ const WebProjects = () => {
             items {
               title
               date
+              link
+              technologies
+              linkgithub
               description{
                 json
               }
@@ -34,6 +37,7 @@ const WebProjects = () => {
     useEffect(() => {
         const fetch = async() => {
             const res = await fetchGraphQL(query); 
+            console.log(Object.values(res.projectCollection.items))
             setList({
                 projectCollection: Object.values(res.projectCollection.items)
             }
@@ -41,7 +45,6 @@ const WebProjects = () => {
             );   
         }
         fetch();
-
      
     }, [lang]);
     if(!list) return;

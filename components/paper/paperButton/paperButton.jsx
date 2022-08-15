@@ -1,7 +1,7 @@
 import styles from './paperButton.module.css';
-const PaperButton = ({text}) => {
+const PaperButton = ({text, onClick}) => {
     return(
-        <button className={styles['wrapper']}>{text}</button>
+        <button className={styles['wrapper']} onClick={onClick}>{text}</button>
     )
 }
 

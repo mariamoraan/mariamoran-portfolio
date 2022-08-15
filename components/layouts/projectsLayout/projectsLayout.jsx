@@ -10,8 +10,18 @@ const ProjectsLayout = ({title, subtitle, list, links}) => {
     const handleClick = (link) => {
         router.push(link);
     }
-    const handleClickProject = () => {
-        router.push('/project')
+    const handleClickProject = (title, description, image, link, technologies, linkgithub) => {
+        router.push({
+            pathname: '/project',
+            query: { 
+                title: title, 
+                description: JSON.stringify(description.json), 
+                image:image, 
+                link:link,
+                technologies: JSON.stringify(technologies),
+                linkgithub: linkgithub,
+            }
+        }) 
     }
     return(
         <div>
@@ -21,11 +31,11 @@ const ProjectsLayout = ({title, subtitle, list, links}) => {
             </div>
             <ul className={styles['grid']}>
                 {
-                    list.map(({title, description, image}, index) => (
+                    list.map(({title, description, image, link, technologies, linkgithub}, index) => (
                         <li 
                             className={styles['grid-item']} 
                             key={index}
-                            onClick={handleClickProject}
+                            onClick={() => handleClickProject(title, description, image.url, link, technologies, linkgithub)}
                         >
                             <div className={styles['image-wrapper']}>
                                 <Image 
