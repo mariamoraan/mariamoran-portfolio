@@ -2,16 +2,12 @@ import useTranslation from 'next-translate/useTranslation';
 import Image from 'next/image';
 import Link from 'next/link';
 import { useState } from 'react';
+import { links } from '../constants';
 import MobileNav from './mobileNav';
 import styles from './nav.module.css';
 
 const Nav = () => {
     const {t} = useTranslation();
-    const links = [
-        {name: 'locations', link:'/locations'},
-        {name: 'our company', link:'/our-company'},
-        {name: 'contact', link:'/contact'},
-    ]
     const [isMenuOpen, setIsMenuOpen] = useState(false);
     return(
         <div className={styles['nav-wrapper']}>

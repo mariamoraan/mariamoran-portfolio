@@ -9,6 +9,9 @@ const ProjectsLayout = ({title, subtitle, list, links}) => {
     const handleClick = (link) => {
         router.push(link);
     }
+    const handleClickProject = () => {
+        router.push('/project')
+    }
     return(
         <div>
             <div className={styles['page-title']}>
@@ -21,6 +24,7 @@ const ProjectsLayout = ({title, subtitle, list, links}) => {
                         <li 
                             className={styles['grid-item']} 
                             key={index}
+                            onClick={handleClickProject}
                         >
                             <div className={styles['image-wrapper']}>
                                 <Image 

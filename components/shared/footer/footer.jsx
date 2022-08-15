@@ -2,15 +2,11 @@ import useTranslation from 'next-translate/useTranslation';
 import Image from 'next/image';
 import Link from 'next/link';
 import PaperButton from '../../paper/paperButton/paperButton';
+import { links } from '../constants';
 import styles from './footer.module.css';
 
 const Footer = () => {
     const {t} = useTranslation();
-    const links = [
-        {name: 'locations', link:'/locations'},
-        {name: 'our company', link:'/our-company'},
-        {name: 'contact', link:'/contact'},
-    ]
     const social = [
         {image: '/shared/desktop/icon-twitter.svg', link: '/a'},
         {image: '/shared/desktop/icon-pinterest.svg', link: '/b'},
