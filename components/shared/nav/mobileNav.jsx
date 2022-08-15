@@ -7,7 +7,7 @@ const MobileNav = ({links}) => {
             <div className={styles['links-wrapper']}>
             {
                 links.map(({name, link}) => (
-                    <Link href={link}>{name}</Link>
+                    <Link key={link} href={link}>{name}</Link>
                 ))
             }
             </div>
