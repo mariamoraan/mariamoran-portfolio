@@ -1,6 +1,7 @@
 import useTranslation from 'next-translate/useTranslation';
 import Image from "next/image";
 import { useRouter } from 'next/router';
+import RichText from '../../paper/RichText/richText';
 import styles from './projectsLayout.module.css';
 
 const ProjectsLayout = ({title, subtitle, list, links}) => {
@@ -29,13 +30,13 @@ const ProjectsLayout = ({title, subtitle, list, links}) => {
                             <div className={styles['image-wrapper']}>
                                 <Image 
                                     layout={'fill'} 
-                                    src={image} 
+                                    src={image.url} 
                                     objectFit={'cover'}
                                 />
                             </div>
                             <div className={styles['content-wrapper']}>
                                 <h3>{title}</h3>
-                                <p>{description}</p>
+                                <RichText className={styles['project-description']} json={description.json} />
                             </div>
                         </li>
                     ))

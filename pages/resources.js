@@ -1,23 +1,52 @@
 import useTranslation from 'next-translate/useTranslation';
 import Head from 'next/head';
+import { useEffect, useState } from 'react';
 import ProjectsLayout from "../components/layouts/projectsLayout/projectsLayout";
 import Footer from '../components/shared/footer/footer';
 import Nav from '../components/shared/nav/nav';
 import { getDevice } from '../hooks/size';
+import { fetchGraphQL } from './api/cms';
+
 
 
 const WebProjects = () => {
-    const {t} = useTranslation();
+    const {t, lang} = useTranslation();
     const device = getDevice();
-    const list = [
-        {title: 'TIM BROWN', description:'A book cover designed for Tim Brown’s new release, ‘Change’s', image: '/graphic-design/desktop/image-change.jpg'},
-        {title: 'BOXED WATER', description:'A simple packaging concept made for Boxed Water', image: '/graphic-design/desktop/image-boxed-water.jpg'},
-        {title: 'SCIENCE !', description:'A poster made in collaboration with the Federal Art Project', image: '/graphic-design/desktop/image-science.jpg'},
-    ]
+    const [list, setList] = useState();
+
     const links = [
         {title: t("common:web_development"), image:`/home/${device}/image-web-design.jpg`, link:'/web-projects'},
         {title: t("common:app_development"), image:`/home/${device}/image-app-design.jpg`, link:'/app-projects'},
     ]
+    const query = `{
+        projectCollection(locale: "${lang}") {
+            items {
+              title
+              date
+              description{
+                json
+              }
+              image{
+                url
+              }
+            }
+          }
+    }`;
+    useEffect(() => {
+        const fetch = async() => {
+            const res = await fetchGraphQL(query); 
+            setList({
+                projectCollection: Object.values(res.projectCollection.items)
+            }
+            
+            );   
+        }
+        fetch();
+
+     
+    }, [lang]);
+    if(!list) return;
+
     return(
         <div>
             <Head>
@@ -30,7 +59,7 @@ const WebProjects = () => {
                 <ProjectsLayout 
                     title={'Resources'} 
                     subtitle={'We build websites that serve as powerful marketing tools and bring memorable brand experiences.'} 
-                    list={list} 
+                    list={list.projectCollection} 
                     links={links}
                 />
             </main>
