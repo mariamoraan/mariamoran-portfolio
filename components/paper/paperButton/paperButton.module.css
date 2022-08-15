@@ -1,0 +1,20 @@
+.wrapper{
+    padding: 18px 24px;
+    background: var(--background-color);
+    color: var(--primary-color-100);
+    font-size: 16px;
+    line-height: 21px;
+    letter-spacing: 1px;
+    font-weight: 500;
+    border-radius: 8px;
+    border: 1px solid var(--background-color);
+    transition: 500ms ease;
+    text-transform: uppercase;
+}
+
+.wrapper:hover{
+    cursor: pointer;
+    color: var(--background-color);
+    background: var(--accent-color-100);
+    border-color: var(--accent-color-100);
+}
