@@ -1,6 +1,7 @@
 import useTranslation from 'next-translate/useTranslation';
 import Image from "next/image";
 import { useRouter } from 'next/router';
+import RichText from '../../paper/RichText/richText';
 import styles from './projectsLayout.module.css';
 
 const ProjectsLayout = ({title, subtitle, list, links}) => {
@@ -9,8 +10,18 @@ const ProjectsLayout = ({title, subtitle, list, links}) => {
     const handleClick = (link) => {
         router.push(link);
     }
-    const handleClickProject = () => {
-        router.push('/project')
+    const handleClickProject = (title, description, image, link, technologies, linkgithub) => {
+        router.push({
+            pathname: '/project',
+            query: { 
+                title: title, 
+                description: JSON.stringify(description.json), 
+                image:image, 
+                link:link,
+                technologies: JSON.stringify(technologies),
+                linkgithub: linkgithub,
+            }
+        }) 
     }
     return(
         <div>
@@ -20,22 +31,22 @@ const ProjectsLayout = ({title, subtitle, list, links}) => {
             </div>
             <ul className={styles['grid']}>
                 {
-                    list.map(({title, description, image}, index) => (
+                    list.map(({title, description, image, link, technologies, linkgithub}, index) => (
                         <li 
                             className={styles['grid-item']} 
                             key={index}
-                            onClick={handleClickProject}
+                            onClick={() => handleClickProject(title, description, image.url, link, technologies, linkgithub)}
                         >
                             <div className={styles['image-wrapper']}>
                                 <Image 
                                     layout={'fill'} 
-                                    src={image} 
+                                    src={image.url} 
                                     objectFit={'cover'}
                                 />
                             </div>
                             <div className={styles['content-wrapper']}>
                                 <h3>{title}</h3>
-                                <p>{description}</p>
+                                <RichText className={styles['project-description']} json={description.json} />
                             </div>
                         </li>
                     ))

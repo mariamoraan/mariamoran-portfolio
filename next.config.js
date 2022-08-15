@@ -1,10 +1,14 @@
-/** @type {import('next').NextConfig} */
 const nextTranslate = require('next-translate');
+
 const nextConfig = {
-poweredByHeader: false,
-swcMinify: true,
+  poweredByHeader: false,
+  images: {
+    domains: ["images.ctfassets.net", "cdn.esan.mn", "image.esan.mn", "cdn.elibrary.mn"],
+  },
+  
 }
+
 module.exports = nextTranslate({
-reactStrictMode: true,
-...nextConfig
+  reactStrictMode: true,
+  ...nextConfig
 })
