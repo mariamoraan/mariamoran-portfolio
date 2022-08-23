@@ -19,6 +19,7 @@
     margin: 64px 10vw;
     width: 100%;
     max-width: 1200px;
+    padding: 0 2vw;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -41,6 +42,17 @@
 .link:hover{
     color: var(--primary-color-100);
     border-bottom: 1px solid var(--primary-color-100);
+}
+
+.accent-link{
+    transition: 500ms ease;
+    border-bottom: 1px solid transparent;
+    color: var(--accent-color);
+}
+
+.accent-link:hover{
+    color: var(--accent-color);
+    border-bottom: 1px solid var(--accent-color);
 }
 
 .mobile-nav-button{

@@ -1,11 +1,12 @@
 .wrapper{
     margin-top: 56px;
     max-width: 1200px;
+    padding: 0 2vw;
 }
 .features-wrapper{
     display: flex;
     justify-content: center;
-    align-items: center;
+    align-items: flex-start;
     list-style: none;
 }
 .feature{

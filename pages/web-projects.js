@@ -18,13 +18,14 @@ const WebProjects = () => {
     ]
 
     const query = `{
-        projectCollection(locale: "${lang}") {
+        projectCollection(where: { type: "web-projects"}, locale: "${lang}") {
             items {
               title
               date
               link
               technologies
               linkgithub
+              auxLink
               description{
                 json
               }
@@ -58,8 +59,8 @@ const WebProjects = () => {
             <Nav />
             <main className='page'>
                 <ProjectsLayout 
-                    title={'Web Development'} 
-                    subtitle={'We build websites that serve as powerful marketing tools and bring memorable brand experiences.'} 
+                    title={t('web_development')} 
+                    subtitle={t('web_development_subtitle')} 
                     list={list.projectCollection} 
                     links={links}
                 />

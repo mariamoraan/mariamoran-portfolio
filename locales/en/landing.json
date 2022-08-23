@@ -1,7 +1,15 @@
 {
-    "hero_title": "María Morán. Frontend Engineer.",
-    "hero_description": "With over 10 years in the industry, we are experienced in creating fully responsive websites, app design, and engaging brand experiences. Find out more about our services.",
-    "passionate": "passionate",
-    "resourceful": "resourceful",
-    "friendly": "friendly"
+    "hero_title": "Maria Moran. Frontend Engineer.",
+    "hero_description": "Hello! My name is María Morán and I am a Computer Engineer. In college I developed a great passion for design, which allowed me to complement my programming knowledge and carry out several interesting web and mobile development projects. I believe that design and engineering must go hand in hand to achieve products that are efficient, usable and that make an impact on people.",
+    "passionate":  "Who I am?",
+    "long_passionate_desc": "Hello! My name is Maria and I am a computer engineer. My training has been marked by a strong impulse to bury the world around me and contribute my grain of sand to make it even better, which is what I hope to achieve one day. That's why I like to embark on projects that have a real impact, such as MYOO, a project of my own with which I hope to help the digitization of small businesses.",
+    "resourceful":  "What I do?",
+    "resourceful_desc": "Since I finished university I have not stopped working on personal projects, growing in the companies where I have had the opportunity to be a member and trying to bring a little of my knowledge to social networks.",
+    "friendly": "My CV",
+    "not_enough":  "Not enough?",
+    "check_virtual_cv":  "Check my virtual CV",
+    "friendly_desc": "In my curriculum I include my experience as an engineer in international companies, my main skills and information about my academic experience.",
+    "passionate_desc": "Hello! My name is Maria and I am a computer engineer. My training has been marked by a strong impulse to bury the world around me and contribute my grain of sand to make it even better, which is what I hope to achieve one day.",
+    "long_resourceful_desc":  "Desde que salí de la universidad no he parado de trabajar en proyectos personales, de crecer en las empresas donde he tenido la oportunidad de ser miembro y de intentar llevar un poco de mi conocimiento a las redes sociales. Además, me formo continuamente tanto con cursos como con libros y artículos para poder estar al día y hacer el mejor trabajo posible.",
+    "long_friendly_desc": "In my curriculum I include my experience as an engineer in international companies, my main skills and information about my academic experience. Check it out and don't hesitate to contact me if you still have questions!"
 }
