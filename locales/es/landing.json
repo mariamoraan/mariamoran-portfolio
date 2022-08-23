@@ -1,10 +1,15 @@
 {
     "hero_title": "María Morán. Frontend Engineer.",
     "hero_description": "¡Hola! Me llamo María Morán y soy Ingeniera Informática. En la universidad desarrollé una gran pasión por el diseño, que me permitió complementar mis conocimeintos de programación y realizar varios proyectos interesantes de desarrollo web y móvil. Creo que el diseño y la ingeniería deben ir de la mano para lograr productos eficientes, usables y que causen impacto en las personas.",
-    "passionate": "passionate",
-    "passionate_desc": "Each project starts with an in-depth brand research to ensure we only create products that serve a purpose. We merge art, design, and technology into exciting new solutions.",
-    "resourceful": "resourceful",
-    "resourceful_desc": "Everything that we do has a strategic purpose. We use an agile approach in all of our projects and value customer collaboration. It guarantees superior results that fulfill our clients’ needs.",
-    "friendly": "friendly",
-    "friendly_desc": "We are a group of enthusiastic folks who know how to put people first. Our success depends on our customers, and we strive to give them the best experience a company can provide."
+    "passionate": "¿Quién soy?",
+    "long_passionate_desc": "¡Hola! Me llamo María y soy ingeniera informática. Mi formación ha estado marcada por un fuerte impulso de enternder el mundo que me rodea y aportar mi granito de arena para hacerlo aún mejor, que es lo que espero conseguir algún día. Por eso me gusta embarcarme en proyectos que tengan un impacto real, como MYOO, un proyecto propio con el que espero ayudar a la digitalización de las pequeñas empresas.",
+    "resourceful": "¿Qué hago?",
+    "resourceful_desc": "Desde que salí de la universidad no he parado de trabajar en proyectos personales, de crecer en las empresas donde he tenido la oportunidad de ser miembro y de intentar llevar un poco de mi conocimiento a las redes sociales.",
+    "friendly": "Mi CV",
+    "not_enough": "¿No es suficiente?",
+    "check_virtual_cv": "Mira mi CV digital",
+    "friendly_desc": "En mi curriculum incluyo mi experiencia como ingeniera en empresas internacionales, mis habilidades principales e información sobre mi experiencia académica.",
+    "passionate_desc": "¡Hola! Me llamo María y soy ingeniera informática. Mi formación ha estado marcada por un fuerte impulso de enternder el mundo que me rodea y aportar mi granito de arena para hacerlo aún mejor, que es lo que espero conseguir algún día.",
+    "long_resourceful_desc": "Desde que salí de la universidad no he parado de trabajar en proyectos personales, de crecer en las empresas donde he tenido la oportunidad de ser miembro y de intentar llevar un poco de mi conocimiento a las redes sociales. Además, me formo continuamente tanto con cursos como con libros y artículos para poder estar al día y hacer el mejor trabajo posible.",
+    "long_friendly_desc":"En mi curriculum incluyo mi experiencia como ingeniera en empresas internacionales, mis habilidades principales e información sobre mi experiencia académica. Échale un vistazo ¡y no dudes en contactar conmigo si sigues teniendo dudas!"
 }

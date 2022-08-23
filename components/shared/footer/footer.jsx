@@ -1,17 +1,22 @@
 import useTranslation from 'next-translate/useTranslation';
 import Image from 'next/image';
 import Link from 'next/link';
+import { useRouter } from 'next/router';
 import PaperButton from '../../paper/paperButton/paperButton';
 import { links } from '../constants';
 import styles from './footer.module.css';
 
 const Footer = () => {
     const {t} = useTranslation();
+    const router = useRouter();
     const social = [
         {image: '/shared/desktop/icon-twitter.svg', link: '/a'},
         {image: '/shared/desktop/icon-pinterest.svg', link: '/b'},
         {image: '/shared/desktop/icon-instagram.svg', link: '/c'},
     ]
+    const handleOpenContact = () => {
+        router.push('/contact');
+    }
     return(
         <footer className={styles['wrapper']}>
             <div className={styles['footer-top']}>
@@ -20,7 +25,7 @@ const Footer = () => {
                     <p>{t('common:ready_to')}</p>
                 </div>
                 <div className={styles['footer-top-button-wrapper']}>
-                    <PaperButton text={t('common:get_in_touch')} />
+                    <PaperButton onClick={handleOpenContact} text={t('common:get_in_touch')} />
                 </div>
             </div>
             <div className={styles['footer-bottom']}>

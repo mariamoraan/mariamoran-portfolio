@@ -19,13 +19,14 @@ const WebProjects = () => {
         {title: t("common:app_development"), image:`/home/${device}/image-app-design.jpg`, link:'/app-projects'},
     ]
     const query = `{
-        projectCollection(locale: "${lang}") {
+        projectCollection(where: { type: "resources-projects"}, locale: "${lang}") {
             items {
               title
               date
               link
               technologies
               linkgithub
+              auxLink
               description{
                 json
               }
@@ -60,8 +61,8 @@ const WebProjects = () => {
             <Nav />
             <main className='page'>
                 <ProjectsLayout 
-                    title={'Resources'} 
-                    subtitle={'We build websites that serve as powerful marketing tools and bring memorable brand experiences.'} 
+                    title={t('common:articles')} 
+                    subtitle={t('common:resources_subtitle')} 
                     list={list.projectCollection} 
                     links={links}
                 />

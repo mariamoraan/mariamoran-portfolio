@@ -10,7 +10,12 @@ const ProjectsLayout = ({title, subtitle, list, links}) => {
     const handleClick = (link) => {
         router.push(link);
     }
-    const handleClickProject = (title, description, image, link, technologies, linkgithub) => {
+    const handleClickProject = (auxLink, title, description, image, link, technologies, linkgithub) => {
+        if(auxLink){
+            console.log(auxLink)
+            window.open(auxLink);
+            return;
+        }
         router.push({
             pathname: '/project',
             query: { 
@@ -24,18 +29,18 @@ const ProjectsLayout = ({title, subtitle, list, links}) => {
         }) 
     }
     return(
-        <div>
+        <div className={styles['wrapper']}>
             <div className={styles['page-title']}>
                 <h1>{title}</h1>
                 <p>{subtitle}</p>
             </div>
             <ul className={styles['grid']}>
                 {
-                    list.map(({title, description, image, link, technologies, linkgithub}, index) => (
+                    list.map(({auxLink, title, description, image, link, technologies, linkgithub}, index) => (
                         <li 
                             className={styles['grid-item']} 
                             key={index}
-                            onClick={() => handleClickProject(title, description, image.url, link, technologies, linkgithub)}
+                            onClick={() => handleClickProject(auxLink, title, description, image.url, link, technologies, linkgithub)}
                         >
                             <div className={styles['image-wrapper']}>
                                 <Image 

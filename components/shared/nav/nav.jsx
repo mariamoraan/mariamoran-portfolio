@@ -6,7 +6,7 @@ import { links } from '../constants';
 import MobileNav from './mobileNav';
 import styles from './nav.module.css';
 
-const Nav = () => {
+const Nav = ({actual}) => {
     const {t} = useTranslation();
     const [isMenuOpen, setIsMenuOpen] = useState(false);
     return(
@@ -22,7 +22,7 @@ const Nav = () => {
                     {
                         links.map(({name, link}) => (
                             <li 
-                            className={styles['link']} 
+                            className={actual === name ? styles['accent-link'] : styles['link']} 
                             key={link}
                             >
                                 <Link href={link}>{name}</Link>

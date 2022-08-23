@@ -19,13 +19,14 @@ const AppProjects = () => {
     ]
 
     const query = `{
-        projectCollection(locale: "${lang}") {
+        projectCollection(where: { type: "app-projects"}, locale: "${lang}") {
             items {
               title
               date
               link
               technologies
               linkgithub
+              auxLink
               description{
                 json
               }
@@ -59,8 +60,8 @@ const AppProjects = () => {
             <Nav />
             <main className='page'>
                 <ProjectsLayout 
-                    title={'App Development'} 
-                    subtitle={'Our mobile designs bring intuitive digital solutions to your customers right at their fingertips.'} 
+                    title={t('app_development')} 
+                    subtitle={t('app_development_subtitle')} 
                     list={list.projectCollection} 
                     links={links}
                 />
