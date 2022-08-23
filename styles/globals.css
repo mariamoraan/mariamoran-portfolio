@@ -5,8 +5,8 @@
   --primary-color-100: #333136;
   --background-color: #FFFFFF;
   --background-color-100: #F1F3F5;
-  --accent-color: #d48368;
-  --accent-color-100: hsla(15, 56%, 72%, 0.5);
+  --accent-color: hsl(360, 56%, 62%);
+  --accent-color-100: hsla(360, 56%, 72%, 0.5);
 }
 
 html,
