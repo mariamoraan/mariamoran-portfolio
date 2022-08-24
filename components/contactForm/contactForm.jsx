@@ -59,7 +59,7 @@ const ContactForm = () => {
             <div className={styles['message-status']}>
                 <div>
                     <p>
-                    {t('common:error')} 
+                    {t('common:success')} 
                     </p>
                     <button onClick={() => router.push('/web-projects')}>{t('common:see_portfolio')}</button>
                     <span onClick={() => setMessageStatus(MESSAGE_STATUS.NONE)}>{t('common:close')}</span>
