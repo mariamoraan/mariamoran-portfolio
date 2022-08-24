@@ -1,9 +1,15 @@
 import useTranslation from 'next-translate/useTranslation';
+import { useRouter } from 'next/router';
 import { useState } from "react";
 import styles from './contactForm.module.css';
 
+const MESSAGE_STATUS = {ERROR: 'error', SUCCESS: 'success', NONE: 'none'};
+
 const ContactForm = () => {
     const {t} = useTranslation();
+    const router = useRouter();
+    const [isLoading, setIsLoading] = useState(false);
+    const [messageStatus, setMessageStatus] = useState(MESSAGE_STATUS.NONE);
     const defaultState = {
         name: '',
         email: '',
@@ -20,19 +26,55 @@ const ContactForm = () => {
 
     const handleSubmit = async(event) => {
         event.preventDefault();  
-        alert("entra")
         try{
-            const res = await fetch(`/api/email?name=${contactData.name}&email=${contactData.email}&message=${contactData.message}`)
-            const data = await res.json();
-            alert("form submited")
+            setIsLoading(true);
+            const {email, message, name} = contactData;
+            const myselfMessage = `E: ${email} \n N: ${name} \n ${message}`;
+            const myselfSubject = `Message from ${name}`;
+            const userSubject = t('common:user_subject').replace('#name', name);
+            const userMessage = t('common:user_message').replace('#name', name);
+            const res_myself = await fetch(`/api/email?email=${'mariamoranluaces@gmail.com'}&subject=${myselfSubject}&message=${myselfMessage}`)
+            const res_user = await fetch(`/api/email?email=${email}&subject=${userSubject}&message=${userMessage}`)
+            const data_myself = await res_myself.json();
+            const data_user = await res_user.json();
+            setIsLoading(false);
+            setMessageStatus(MESSAGE_STATUS.SUCCESS);
+            setTimeout(() => {
+                setMessageStatus(MESSAGE_STATUS.NONE);
+            }, 5000)
             setContactData(defaultState);
         }catch(e){
-            alert("error")
-            console.error(e)
+            console.error(e);
+            setMessageStatus(MESSAGE_STATUS.ERROR);
         }
     }
     return(
         <div className={styles['container']}>
+        {isLoading &&
+        <div className={styles['loading-wrapper']}>
+             <span><p>Loading...</p></span>
+        </div>
+        }
+        { messageStatus == MESSAGE_STATUS.SUCCESS &&
+            <div className={styles['message-status']}>
+                <div>
+                    <p>
+                    {t('common:error')} 
+                    </p>
+                    <button onClick={() => router.push('/web-projects')}>{t('common:see_portfolio')}</button>
+                    <span onClick={() => setMessageStatus(MESSAGE_STATUS.NONE)}>{t('common:close')}</span>
+                </div>
+            </div>
+        }
+         { messageStatus == MESSAGE_STATUS.ERROR &&
+            <div className={styles['message-status']}>
+                <div>
+                    <p>{t('common:error')}</p>
+                    <button onClick={() => router.push('/web-projects')}>{t('common:see_portfolio')}</button>
+                    <span onClick={() => setMessageStatus(MESSAGE_STATUS.NONE)}>{t('common:close')}</span>
+                </div>
+            </div>
+        }
         <div className={styles['wrapper']}>
             <div className={styles['left-wrapper']}>
                 <h1>{t('common:lets_talk')}</h1>

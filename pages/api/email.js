@@ -2,21 +2,25 @@ import { SMTPClient } from 'emailjs';
  
  
 export default async function handler(req, res) {
- const {name, email, message} = req.query;
+ const {email, message, subject} = req.query;
  const client = new SMTPClient({
    user: process.env.EMAIL,
    password: process.env.EMAIL_PASSWORD,
    host: 'smtp.gmail.com',
    ssl:true
  });
+
+ console.log("email: " + email)
+ console.log("message: " + message)
+ console.log("subject: " + subject)
  
  try{
     await client.sendAsync(
     {
       text: message,
       from: process.env.EMAIL,
-      to: process.env.EMAIL,
-      subject:  `Message from ${name} with email: ${email}`,
+      to: email,
+      subject:  subject,
     }
     )
   }

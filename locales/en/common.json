@@ -13,5 +13,11 @@
     "get_in_touch": "Get in Touch",
     "contact_me": "Contact Me",
     "phone": "P: +34 681 05 09 45",
-    "email": "M : mariamoranluaces@gmail.com"
+    "email": "M : mariamoranluaces@gmail.com",
+    "user_subject": "Thank you for your message #name !",
+    "user_message": "Hi ! #name thank you for your message. I will contact you as soon as possible.",
+    "success": "The message has been sent successfully, I will answer you as soon as possible. In the meantime, take a look at my portfolio.",
+    "error": "An error has ocurred, you can try again later. In the meantime, take a look at my portfolio.",
+    "close": "Close",
+    "see_portfolio": "See Portfolio"
 }

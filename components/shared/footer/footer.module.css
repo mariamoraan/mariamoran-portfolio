@@ -23,6 +23,7 @@
     color: var(--background-color);
 }
 .footer-top-text-wrapper{
+    padding: 0 24px;
     flex: 1;
 }
 .footer-top-button-wrapper{

@@ -13,5 +13,11 @@
     "get_in_touch": "Ponte en contacto",
     "contact_me": "Contacta",
     "phone": "T: +34 681 05 09 45",
-    "email": "E : mariamoranluaces@gmail.com"
+    "email": "E : mariamoranluaces@gmail.com",
+    "user_subject": "Gracias por tu mensaje #name !",
+    "user_message": "Hola, #name ! Gracias por tu mensaje. Contactaré contigo tan pronto como me sea posible.",
+    "success": "El mensaje se ha enviado correctamente, te responderé tan pronto como me sea posible. Mientras tanto, échale un vistazo a mi portfolio.",
+    "error": "Ha ocurrido un error. Inténtalo de nuevo más tarde. Mientras... ¿Por qué no le echas un vistazo a mi portfolio?",
+    "close": "Cerrar",
+    "see_portfolio": "Ver Portfolio"
 }

@@ -1,5 +1,5 @@
 .wrapper{
-    margin: 0 24px;
+    margin: 0 5vw;
     padding: 0 60px;
     max-width: 1200px;
     display: flex;
@@ -43,3 +43,8 @@
     }
 }
 
+@media (max-width: 800px){
+    .wrapper{
+        margin: 0 2vw;
+    }
+}
